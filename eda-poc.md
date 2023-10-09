@@ -7,8 +7,10 @@ The following document is onboard EDA workloads in your Azure subscription
 
 Head over to Azure Portal https://portal.azure.com
 Click on Azure Cloud Shell Icon
+
 Create a new resource group
 az group create -l $REGION -n $RESOURCE_GROUP
+
  Create a new VNet to deploy compute/storage etc.
 az network vnet create -l $REGION -g $RESOURCE_GROUP -n $VNET_NAME --address-prefix 10.0.0.0/16 \
 --subnet-name MySubnet --subnet-prefixes 10.0.0.0/24
