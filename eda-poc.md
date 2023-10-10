@@ -56,11 +56,13 @@ az sig create -g $RESOURCE_GROUP --gallery-name MyGallery -l $REGION
     az sig image-definition create -g $RESOURCE_GROUP --gallery-name MyGallery --gallery-image-definition centosimagedef --publisher KA --offer KA --sku KA --hyper-v-generation V2 --os-type linux --os-state Generalized
 
     ##### Create Image Version
-    az sig image-version create --resource-group rg-intel-wus3 --gallery-name intelsig --gallery-image-definition centosimagedef --gallery-image-version 1.0.0-managed-image {resource-id of your generalized image} --target-regions $REGION=1=standard_lrs --target-region-encryption intel-des1 --no-wait
+    az sig image-version create -g $RESOURCE_GROUP --gallery-name MyGallery --gallery-image-definition centosimagedef --gallery-image-version 1.0.0 --managed-image {resource-id of your generalized image} --target-regions $REGION=1=standard_lrs --target-region-encryption MyDiskEncryptionSet --no-wait
 
 #### Azure CycleCloud
 Provision a CycleCloud from Azure Marketplace. Pick the latest version.
 You can create a VM without a public IP so that this VM is not exposed to public internet.
+Follow the steps below to provision a CycleCloud VM
+https://learn.microsoft.com/en-us/azure/cyclecloud/qs-install-marketplace?view=cyclecloud-8
 
 #### Azure Bastiona
 Azure Bastion is a fully managed service that lets you connect to  virtual machines using your browser and the Azure portal, or via the native SSH or RDP client already installed on your local computer. It needs a dedicated subnet and should be named as AzureBastionSubnet
