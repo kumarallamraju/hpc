@@ -14,11 +14,11 @@ We will be creating a bunch of Azure resources to standup our HPC/EDA environmen
 
 Set the followinig variables
 
-    RESOURCE_GROUP=xx
+    RESOURCE_GROUP="xxxx"
 
-    REGION=
+    REGION="westus3"
 
-    VNET_NAME=
+    VNET_NAME="MyVNet"
 
 
 #### Resource group
