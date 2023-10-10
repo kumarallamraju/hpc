@@ -56,7 +56,7 @@ az sig create -g $RESOURCE_GROUP --gallery-name MyGallery -l $REGION
     az sig image-definition create -g $RESOURCE_GROUP --gallery-name MyGallery --gallery-image-definition centosimagedef --publisher KA --offer KA --sku KA --hyper-v-generation V2 --os-type linux --os-state Generalized
 
     ##### Create Image Version
-    az sig image-version create --resource-group rg-intel-wus3 --gallery-name intelsig --gallery-image-definition centosimagedef --gallery-image-version 1.0.0 --managed-image {resource-id of your generalized image} --target-regions $REGION=1=standard_lrs --target-region-encryption intel-des1 --no-wait
+    az sig image-version create --resource-group rg-intel-wus3 --gallery-name intelsig --gallery-image-definition centosimagedef --gallery-image-version 1.0.0-managed-image {resource-id of your generalized image} --target-regions $REGION=1=standard_lrs --target-region-encryption intel-des1 --no-wait
 
 #### Azure CycleCloud
 Provision a CycleCloud from Azure Marketplace. Pick the latest version.
