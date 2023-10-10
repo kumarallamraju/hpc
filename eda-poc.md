@@ -34,6 +34,7 @@ https://learn.microsoft.com/en-us/azure/virtual-machines/generalize
 
 #### Azure Key Vault and create your custom Keys as well.
 Follow this document to create an Azure Key Vault
+
 https://learn.microsoft.com/en-us/azure/key-vault/general/quick-create-cli
 
 #### Storage account. 
