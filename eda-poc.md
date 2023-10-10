@@ -1,14 +1,16 @@
 The following document is onboard EDA workloads in your Azure subscription
 
 ##### Prerequisites
-1) Have a new subscription with Owner/Contributor privileges
+
+Have a new subscription with Owner/Contributor privileges
 
 
 
+##### Getting Started
 Head over to Azure Portal https://portal.azure.com
 Click on Azure Cloud Shell Icon
 
-#Create a new resource group
+#### Create a new resource group
 az group create -l $REGION -n $RESOURCE_GROUP
 
 #Create a new VNet to deploy compute/storage etc.
