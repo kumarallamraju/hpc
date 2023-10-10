@@ -12,6 +12,12 @@ Head over to Azure Portal https://portal.azure.com
 Click on Azure Cloud Shell Icon. 
 We will be creating a bunch of Azure following resources to standup our HPC/EDA environment
 
+Set the followinig variables
+RESOURCE_GROUP=
+REGION=
+VNET_NAME=
+
+
 #### Resource group
 az group create -l $REGION -n $RESOURCE_GROUP
 
@@ -24,6 +30,8 @@ Install your custom tools/software. Follow the steps mentioned in this document 
 https://learn.microsoft.com/en-us/azure/virtual-machines/generalize
 
 #### Azure Key Vault and create your custom Keys as well.
+Follow this document to create an Azure Key Vault
+https://learn.microsoft.com/en-us/azure/key-vault/general/quick-create-cli
 
 #### Storage account. 
 
@@ -52,7 +60,6 @@ az sig image-definition create -g $RESOURCE_GROUP --gallery-name MyGallery --gal
 az sig image-version create --resource-group rg-intel-wus3 --gallery-name intelsig --gallery-image-definition centosimagedef \
 --gallery-image-version 1.0.0 --managed-image {resource-id of your generalized image} 
 --target-regions $REGION=1=standard_lrs --target-region-encryption intel-des1 --no-wait
-
 
 #### Azure CycleCloud
 Provision a CycleCloud from Azure Marketplace. Pick the latest version.
