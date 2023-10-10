@@ -61,10 +61,12 @@ az sig create -g $RESOURCE_GROUP --gallery-name MyGallery -l $REGION
 #### Azure CycleCloud
 Provision a CycleCloud from Azure Marketplace. Pick the latest version.
 You can create a VM without a public IP so that this VM is not exposed to public internet.
+
 Follow the steps below to provision a CycleCloud VM
+
 https://learn.microsoft.com/en-us/azure/cyclecloud/qs-install-marketplace?view=cyclecloud-8
 
-#### Azure Bastiona
+#### Azure Bastion
 Azure Bastion is a fully managed service that lets you connect to  virtual machines using your browser and the Azure portal, or via the native SSH or RDP client already installed on your local computer. It needs a dedicated subnet and should be named as AzureBastionSubnet
 
     az network vnet subnet create -g $RESOURCE_GROUP --vnet-name MyVnet -n AzureBastionSubnet
