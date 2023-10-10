@@ -10,7 +10,7 @@ Have a new subscription with Owner/Contributor privileges
 Head over to Azure Portal https://portal.azure.com
 
 Click on Azure Cloud Shell Icon. 
-We will be creating a bunch of Azure following resources to standup our HPC/EDA environment
+We will be creating a bunch of Azure resources to standup our HPC/EDA environment
 
 Set the followinig variables
 
