@@ -18,7 +18,7 @@ az group create -l $REGION -n $RESOURCE_GROUP
 #### Virtual Network
 az network vnet create -l $REGION -g $RESOURCE_GROUP -n $VNET_NAME --address-prefix 10.0.0.0/16 --subnet-name MySubnet --subnet-prefixes 10.0.0.0/24
 
-#### BaseImage
+#### Base Image
 Create a new virtual machine from Azure Marketplace (CentOS, Ubuntu etc..) 
 Install your custom tools/software. Follow the steps mentioned in this document to generalize your VM
 https://learn.microsoft.com/en-us/azure/virtual-machines/generalize
