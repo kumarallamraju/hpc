@@ -100,4 +100,6 @@ Follow the steps below to provision and configure a CycleCloud VM
 https://learn.microsoft.com/en-us/azure/cyclecloud/qs-install-marketplace?view=cyclecloud-8
 
 
+#### License Server (Cadence, Ansys)
+Similar to the above step, provision another Linux VM (CentOS, Ubuntu etc.) and install the relevant software to managed your licenses
 
