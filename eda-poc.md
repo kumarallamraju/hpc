@@ -63,6 +63,7 @@ https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-qu
 A common challenge for developers is the management of secrets, credentials, certificates, and keys used to secure communication between services. Managed identities eliminate the need for developers to manage these credentials.
 
 Following this page to create a new "User Managed Identity"
+
 https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview
 
     az identity create -g $RESOURCE_GROUP -n myUserAssignedIdentity
