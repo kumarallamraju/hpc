@@ -32,8 +32,8 @@ Create a new virtual machine from Azure Marketplace (CentOS, Ubuntu etc..)
 Install your custom tools/software. Follow the steps mentioned in this document to generalize your VM
 https://learn.microsoft.com/en-us/azure/virtual-machines/generalize
 
-#### Azure Key Vault and create your custom Keys as well.
-Follow this document to create an Azure Key Vault
+#### Azure Key Vault
+Follow this document to create an Azure Key Vault and keys
 
 https://learn.microsoft.com/en-us/azure/key-vault/general/quick-create-cli
 
