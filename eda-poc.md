@@ -34,33 +34,6 @@ Install your custom tools/software. Follow the steps mentioned in this document 
 
 https://learn.microsoft.com/en-us/azure/virtual-machines/generalize
 
-#### Azure Key Vault
-Follow this document to create an Azure Key Vault and keys
-
-https://learn.microsoft.com/en-us/azure/key-vault/general/quick-create-cli
-
-#### Storage account. 
-
-Depending on your organization needs you can make the Azure KV and Storage Account private link enabled.
-
-Follow these steps below if you need create a Storage Account with Customer Managed Keys.
-
-https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-configure-new-account?tabs=azure-portal
-
-#### Azure NetApp Files
-Azure Netapp Files (ANF) is recommended to run HPC workloads. We need a dedicated subnet to provision ANF. 
-
-Make sure ANF is provisioned in the same the resource group, region and VNet.
-
-    az network vnet subnet create -g $RESOURCE_GROUP --vnet-name MyVnet -n anfsubnet --address-prefixes 10.0.1.0/26
-
-Follow the below document to provision ANF. 
-
-https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-quickstart-set-up-account-create-volumes?tabs=azure-portal
-
-#### Disk Encryption Set
-    az disk-encryption-set create --resource-group $RESOURCE_GROUP --name MyDiskEncryptionSet --key-url {Vault URI} --source-vault MyVault
-
 #### Compute Image Gallery
 https://learn.microsoft.com/en-us/cli/azure/sig?view=azure-cli-latest#az-sig-create()
 
@@ -72,6 +45,38 @@ https://learn.microsoft.com/en-us/cli/azure/sig?view=azure-cli-latest#az-sig-cre
 
     # Create Image Version
     az sig image-version create -g $RESOURCE_GROUP --gallery-name MyGallery --gallery-image-definition centosimagedef --gallery-image-version 1.0.0 --managed-image {resource-id of your generalized image} --target-regions $REGION=1=standard_lrs --target-region-encryption MyDiskEncryptionSet --no-wait
+
+
+#### Azure NetApp Files
+Azure NetApp Files is widely used as the underlying shared file-storage service in various scenarios. These include migration (lift and shift) of POSIX-compliant Linux and Windows applications, SAP HANA, databases, high-performance compute (HPC) infrastructure and apps, and enterprise web applications. 
+
+Make sure ANF is provisioned in the same the resource group, region and VNet. We need a dedicated subnet before provisioning ANF. 
+
+    az network vnet subnet create -g $RESOURCE_GROUP --vnet-name MyVnet -n anfsubnet --address-prefixes 10.0.1.0/26
+
+Follow the below document to provision ANF. 
+
+https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-quickstart-set-up-account-create-volumes?tabs=azure-portal
+
+#### Azure Key Vault
+Follow this document to create an Azure Key Vault and keys
+
+https://learn.microsoft.com/en-us/azure/key-vault/general/quick-create-cli
+
+#### Disk Encryption Set
+
+https://learn.microsoft.com/en-us/azure/virtual-machines/disks-enable-customer-managed-keys-portal
+
+    az disk-encryption-set create --resource-group $RESOURCE_GROUP --name MyDiskEncryptionSet --key-url {Vault URI} --source-vault MyVault
+
+#### Storage account. 
+
+Depending on your organization needs you can make the Azure KV and Storage Account private link enabled.
+
+Follow these steps below if you need to create a Storage Account with Customer Managed Keys.
+
+https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-configure-new-account?tabs=azure-portal
+
 
 
 #### Azure Bastion
