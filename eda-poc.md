@@ -71,13 +71,6 @@ https://learn.microsoft.com/en-us/cli/azure/sig?view=azure-cli-latest#az-sig-cre
     # Create Image Version
     az sig image-version create -g $RESOURCE_GROUP --gallery-name MyGallery --gallery-image-definition centosimagedef --gallery-image-version 1.0.0 --managed-image {resource-id of your generalized image} --target-regions $REGION=1=standard_lrs --target-region-encryption MyDiskEncryptionSet --no-wait
 
-#### Azure CycleCloud
-Provision a CycleCloud from Azure Marketplace. Choose the latest version.
-You can create a VM without a public IP so that this VM is not exposed to public internet. Alternatively you can peer this VNet to an existing VNet that's connected to your VPN or Express Route. This allows you to access this VM from your on-premise network.
-
-Follow the steps below to provision a CycleCloud VM
-
-https://learn.microsoft.com/en-us/azure/cyclecloud/qs-install-marketplace?view=cyclecloud-8
 
 #### Azure Bastion
 Azure Bastion is a fully managed service that lets you connect to  virtual machines using your browser and the Azure portal, or via the native SSH or RDP client already installed on your local computer. It needs a dedicated subnet and should be named as AzureBastionSubnet
@@ -89,6 +82,15 @@ Follow the steps mentioned in this document to create an Azure Bastion instance
 https://learn.microsoft.com/en-us/azure/bastion/tutorial-create-host-portal
 
 
+#### Azure CycleCloud
+Provision a CycleCloud from Azure Marketplace. Choose the latest version.
+You can create a VM without a public IP so that this VM is not exposed to public internet. Alternatively you can peer this VNet to an existing VNet that's connected to your VPN or Express Route. This allows you to access this VM from your on-premise network.
+
+After the VM is successfully provisioned, access the VM on it's private IP.
+
+Follow the steps below to provision and configure a CycleCloud VM
+
+https://learn.microsoft.com/en-us/azure/cyclecloud/qs-install-marketplace?view=cyclecloud-8
 
 
 
