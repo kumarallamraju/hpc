@@ -69,9 +69,9 @@ Azure Bastion is a fully managed service that lets you connect to  virtual machi
 
     az network vnet subnet create -g $RESOURCE_GROUP --vnet-name MyVnet -n AzureBastionSubnet
 
-    Follow the steps mentioned in this document
+Follow the steps mentioned in this document
     
-    https://learn.microsoft.com/en-us/azure/bastion/tutorial-create-host-portal
+https://learn.microsoft.com/en-us/azure/bastion/tutorial-create-host-portal
 
 
 
