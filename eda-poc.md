@@ -58,7 +58,7 @@ https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-qu
 #### Compute Image Gallery
 https://learn.microsoft.com/en-us/cli/azure/sig?view=azure-cli-latest#az-sig-create()
 
-    ##### Create an Image Gallery
+    # Create an Image Gallery
     az sig create -g $RESOURCE_GROUP --gallery-name MyGallery -l $REGION
 
     ##### Create Image Definition
