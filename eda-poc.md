@@ -55,8 +55,8 @@ az sig create -g $RESOURCE_GROUP --gallery-name MyGallery -l $REGION
     ##### Create Image Definition
     az sig image-definition create -g $RESOURCE_GROUP --gallery-name MyGallery --gallery-image-definition centosimagedef --publisher KA --offer KA --sku KA --hyper-v-generation V2 --os-type linux --os-state Generalized
 
-##### Create Image Version
-az sig image-version create --resource-group rg-intel-wus3 --gallery-name intelsig --gallery-image-definition centosimagedef \
+    ##### Create Image Version
+    az sig image-version create --resource-group rg-intel-wus3 --gallery-name intelsig --gallery-image-definition centosimagedef \
 --gallery-image-version 1.0.0 --managed-image {resource-id of your generalized image} 
 --target-regions $REGION=1=standard_lrs --target-region-encryption intel-des1 --no-wait
 
@@ -67,10 +67,10 @@ You can create a VM without a public IP so that this VM is not exposed to public
 #### Azure Bastion
 Azure Bastion is a fully managed service that lets you connect to  virtual machines using your browser and the Azure portal, or via the native SSH or RDP client already installed on your local computer. It needs a dedicated subnet and should be named as AzureBastionSubnet
 
-az network vnet subnet create -g $RESOURCE_GROUP --vnet-name MyVnet -n AzureBastionSubnet
+    az network vnet subnet create -g $RESOURCE_GROUP --vnet-name MyVnet -n AzureBastionSubnet
 
-Follow the steps mentioned in this document
-https://learn.microsoft.com/en-us/azure/bastion/tutorial-create-host-portal
+    Follow the steps mentioned in this document
+    https://learn.microsoft.com/en-us/azure/bastion/tutorial-create-host-portal
 
 
 
