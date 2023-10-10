@@ -53,7 +53,7 @@ https://learn.microsoft.com/en-us/cli/azure/sig?view=azure-cli-latest#az-sig-cre
 az sig create -g $RESOURCE_GROUP --gallery-name MyGallery -l $REGION
 
     ##### Create Image Definition
-az sig image-definition create -g $RESOURCE_GROUP --gallery-name MyGallery --gallery-image-definition centosimagedef --publisher KA --offer KA --sku KA --hyper-v-generation V2 --os-type linux --os-state Generalized
+    az sig image-definition create -g $RESOURCE_GROUP --gallery-name MyGallery --gallery-image-definition centosimagedef --publisher KA --offer KA --sku KA --hyper-v-generation V2 --os-type linux --os-state Generalized
 
 ##### Create Image Version
 az sig image-version create --resource-group rg-intel-wus3 --gallery-name intelsig --gallery-image-definition centosimagedef \
