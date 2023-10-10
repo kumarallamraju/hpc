@@ -13,6 +13,7 @@ Click on Azure Cloud Shell Icon.
 We will be creating a bunch of Azure following resources to standup our HPC/EDA environment
 
 Set the followinig variables
+
     RESOURCE_GROUP=
 
     REGION=
