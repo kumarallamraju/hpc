@@ -40,7 +40,9 @@ https://learn.microsoft.com/en-us/azure/key-vault/general/quick-create-cli
 #### Storage account. 
 
 Depending on your organization needs you can make the Azure KV and Storage Account private link enabled.
+
 Follow these steps below if you need create a Storage Account with Customer Managed Keys.
+
 https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-configure-new-account?tabs=azure-portal
 
 #### Azure NetApp Files
