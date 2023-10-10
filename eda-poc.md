@@ -8,7 +8,9 @@ Have a new subscription with Owner/Contributor privileges
 
 #### Getting Started
 Head over to Azure Portal https://portal.azure.com
-Click on Azure Cloud Shell Icon. We will be creating the following resources
+
+Click on Azure Cloud Shell Icon. 
+We will be creating a bunch of Azure following resources to standup our HPC/EDA environment
 
 #### Resource group
 az group create -l $REGION -n $RESOURCE_GROUP
