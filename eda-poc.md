@@ -58,16 +58,22 @@ Follow the below document to provision ANF.
 
 https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-quickstart-set-up-account-create-volumes?tabs=azure-portal
 
-#### Azure Key Vault
-Follow this document to create an Azure Key Vault and keys
-
-https://learn.microsoft.com/en-us/azure/key-vault/general/quick-create-cli
-
 #### Disk Encryption Set
 
 https://learn.microsoft.com/en-us/azure/virtual-machines/disks-enable-customer-managed-keys-portal
 
     az disk-encryption-set create --resource-group $RESOURCE_GROUP --name MyDiskEncryptionSet --key-url {Vault URI} --source-vault MyVault
+
+#### Azure Key Vault
+Follow this document to create an Azure Key Vault and keys
+
+https://learn.microsoft.com/en-us/azure/key-vault/general/quick-create-cli
+
+Give the Azure RBAC  (Key Vault Secrets User and Key Vault Reader) roles on the Azure KV by selecting managed identity of Disk Encryption Set
+
+Follow this doc for more info
+https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide?tabs=azure-cli
+
 
 #### Storage account. 
 
