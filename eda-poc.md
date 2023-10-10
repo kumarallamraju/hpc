@@ -6,7 +6,7 @@ Have a new subscription with Owner/Contributor privileges
 
 
 
-##### Getting Started
+#### Getting Started
 Head over to Azure Portal https://portal.azure.com
 Click on Azure Cloud Shell Icon
 
