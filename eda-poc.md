@@ -1,4 +1,4 @@
-##### Introduction
+### Introduction
 The following document is written to onboard EDA workloads in your Azure subscription
 
 ### Prerequisites
