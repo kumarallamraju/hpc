@@ -49,8 +49,6 @@ az disk-encryption-set create --resource-group $RESOURCE_GROUP --name MyDiskEncr
 
 #### Compute Image Gallery
 https://learn.microsoft.com/en-us/cli/azure/sig?view=azure-cli-latest#az-sig-create()
-
-##### Create Image Gallery
 az sig create -g $RESOURCE_GROUP --gallery-name MyGallery -l $REGION
 
 ##### Create Image Definition
