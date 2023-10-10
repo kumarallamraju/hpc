@@ -1,6 +1,6 @@
 The following document is onboard EDA workloads in your Azure subscription
 
-#Prerequisites
+### Prerequisites
 1) Have a new subscription with Owner/Contributor privileges
 
 
