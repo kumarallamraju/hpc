@@ -52,6 +52,8 @@ Azure Netapp Files (ANF) is recommended to run HPC workloads. We need a dedicate
 
 Make sure ANF is provisioned in the same the resource group, region and VNet.
 
+    az network vnet subnet create -g $RESOURCE_GROUP --vnet-name MyVnet -n anfsubnet --address-prefixes 10.0.1.0/26
+
 Follow the below document to provision ANF. 
 
 https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-quickstart-set-up-account-create-volumes?tabs=azure-portal
@@ -75,7 +77,7 @@ https://learn.microsoft.com/en-us/cli/azure/sig?view=azure-cli-latest#az-sig-cre
 #### Azure Bastion
 Azure Bastion is a fully managed service that lets you connect to  virtual machines using your browser and the Azure portal, or via the native SSH or RDP client already installed on your local computer. It needs a dedicated subnet and should be named as AzureBastionSubnet
 
-    az network vnet subnet create -g $RESOURCE_GROUP --vnet-name MyVnet -n AzureBastionSubnet
+    az network vnet subnet create -g $RESOURCE_GROUP --vnet-name MyVnet -n AzureBastionSubnet --address-prefixes 10.0.2.0/27
 
 Follow the steps mentioned in this document to create an Azure Bastion instance
     
