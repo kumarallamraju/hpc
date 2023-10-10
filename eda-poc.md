@@ -22,10 +22,10 @@ Set the followinig variables
 
 
 #### Resource group
-az group create -l $REGION -n $RESOURCE_GROUP
+    az group create -l $REGION -n $RESOURCE_GROUP
 
 #### Virtual Network
-az network vnet create -l $REGION -g $RESOURCE_GROUP -n $VNET_NAME --address-prefix 10.0.0.0/16 --subnet-name MySubnet --subnet-prefixes 10.0.0.0/24
+    az network vnet create -l $REGION -g $RESOURCE_GROUP -n $VNET_NAME --address-prefix 10.0.0.0/16 --subnet-name MySubnet --subnet-prefixes 10.0.0.0/24
 
 #### Base Image
 Create a new virtual machine from Azure Marketplace (CentOS, Ubuntu etc..) 
@@ -48,7 +48,7 @@ Follow the below document to provision ANF. Make sure ANF is provisioned in the 
 https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-quickstart-set-up-account-create-volumes?tabs=azure-portal
 
 #### Disk Encryption Set
-az disk-encryption-set create --resource-group $RESOURCE_GROUP --name MyDiskEncryptionSet --key-url {Vault URI} --source-vault MyVault
+    az disk-encryption-set create --resource-group $RESOURCE_GROUP --name MyDiskEncryptionSet --key-url {Vault URI} --source-vault MyVault
 
 #### Compute Image Gallery
 https://learn.microsoft.com/en-us/cli/azure/sig?view=azure-cli-latest#az-sig-create()
