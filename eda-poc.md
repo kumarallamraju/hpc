@@ -58,6 +58,18 @@ Follow the below document to provision ANF.
 
 https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-quickstart-set-up-account-create-volumes?tabs=azure-portal
 
+
+#### User Managed Identity
+A common challenge for developers is the management of secrets, credentials, certificates, and keys used to secure communication between services. Managed identities eliminate the need for developers to manage these credentials.
+
+Following this page to create a new "User Managed Identity"
+https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview
+
+    az identity create -g $RESOURCE_GROUP -n myUserAssignedIdentity
+    
+https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm
+
+
 #### Disk Encryption Set
 
 https://learn.microsoft.com/en-us/azure/virtual-machines/disks-enable-customer-managed-keys-portal
