@@ -14,7 +14,7 @@ We will be creating a bunch of Azure following resources to standup our HPC/EDA 
 
 Set the followinig variables
 
-    RESOURCE_GROUP=
+    RESOURCE_GROUP=xx
 
     REGION=
 
