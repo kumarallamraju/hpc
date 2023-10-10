@@ -45,7 +45,11 @@ https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-con
 
 #### Azure NetApp Files
 Azure Netapp Files (ANF) is recommended to run HPC workloads. We need a dedicated subnet to provision ANF. 
-Follow the below document to provision ANF. Make sure ANF is provisioned in the same the resource group, region and VNet.
+
+Make sure ANF is provisioned in the same the resource group, region and VNet.
+
+Follow the below document to provision ANF. 
+
 https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-quickstart-set-up-account-create-volumes?tabs=azure-portal
 
 #### Disk Encryption Set
