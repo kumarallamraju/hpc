@@ -70,8 +70,8 @@ https://learn.microsoft.com/en-us/cli/azure/sig?view=azure-cli-latest#az-sig-cre
     az sig image-version create -g $RESOURCE_GROUP --gallery-name MyGallery --gallery-image-definition centosimagedef --gallery-image-version 1.0.0 --managed-image {resource-id of your generalized image} --target-regions $REGION=1=standard_lrs --target-region-encryption MyDiskEncryptionSet --no-wait
 
 #### Azure CycleCloud
-Provision a CycleCloud from Azure Marketplace. Pick the latest version.
-You can create a VM without a public IP so that this VM is not exposed to public internet.
+Provision a CycleCloud from Azure Marketplace. Choose the latest version.
+You can create a VM without a public IP so that this VM is not exposed to public internet. Alternatively you can peer this VNet to an existing VNet that's connected to your VPN or Express Route. This allows you to access this VM from your on-premise network.
 
 Follow the steps below to provision a CycleCloud VM
 
@@ -82,7 +82,7 @@ Azure Bastion is a fully managed service that lets you connect to  virtual machi
 
     az network vnet subnet create -g $RESOURCE_GROUP --vnet-name MyVnet -n AzureBastionSubnet
 
-Follow the steps mentioned in this document
+Follow the steps mentioned in this document to create an Azure Bastion instance
     
 https://learn.microsoft.com/en-us/azure/bastion/tutorial-create-host-portal
 
