@@ -14,7 +14,7 @@ We will be creating a bunch of Azure resources to standup our HPC/EDA environmen
 
 Set the followinig variables
 
-    RESOURCE_GROUP="xxxx"
+    RESOURCE_GROUP="rg-eda"
 
     REGION="westus3"
 
