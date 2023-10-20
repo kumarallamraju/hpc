@@ -35,6 +35,7 @@ Install your custom tools as well as the library dependencies required by your t
 https://learn.microsoft.com/en-us/azure/virtual-machines/generalize
 
 #### Compute Image Gallery
+We will use Azure's Compute Image Gallery(CIG) and store and version the managed imanges. It'll also be helpful to distribute these images across the azure regions.
 https://learn.microsoft.com/en-us/cli/azure/sig?view=azure-cli-latest#az-sig-create()
 
     # Create an Image Gallery
