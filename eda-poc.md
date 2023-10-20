@@ -1,5 +1,5 @@
 ### Introduction
-The following document is written to onboard EDA workloads in your Azure subscription
+The Azure cloud is an excellent environment to run large scale engineering workloads such as HPC and EDA. Azure implements several features that facilitate its usage for HPC workloads. While EDA workloads have a slightly different profile than conventional HPC workloads, some of the capabilities Azure implements for HPC can be leveraged by EDA. Those capabilities, combined with speciality solutions Azure develops with semiconductor workloads in mind, make Azure ideal for running chip design. The following document provides step by step guidance for how to migrate an EDA workload to the Azure cloud. This is meant to provide one example of a successful implementation, but is not meant to be exhuastive or illustrative of all possibilities. 
 
 ### Prerequisites
 Have a new subscription with Owner/Contributor privileges
@@ -28,9 +28,9 @@ Set the followinig variables
     az network vnet create -l $REGION -g $RESOURCE_GROUP -n $VNET_NAME --address-prefix 10.0.0.0/16 --subnet-name MySubnet --subnet-prefixes 10.0.0.0/24
 
 #### Base Image
-Create a new virtual machine from Azure Marketplace (CentOS, Ubuntu etc..) 
+Create a new virtual machine from Azure Marketplace (CentOS, Rocky Linux, AlmaLinux, etc..) 
 
-Install your custom tools/software. Follow the steps mentioned in this document to generalize your VM
+Install your custom tools as well as the library dependencies required by your tool vendor. Follow the steps mentioned in this document to generalize your VM
 
 https://learn.microsoft.com/en-us/azure/virtual-machines/generalize
 
@@ -48,7 +48,7 @@ https://learn.microsoft.com/en-us/cli/azure/sig?view=azure-cli-latest#az-sig-cre
 
 
 #### Azure NetApp Files
-Azure NetApp Files is widely used as the underlying shared file-storage service in various scenarios. These include migration (lift and shift) of POSIX-compliant Linux and Windows applications, SAP HANA, databases, high-performance compute (HPC) infrastructure and apps, and enterprise web applications. 
+EDA workloads rely on high performance shared file storage. NFS is the industry standard for EDA and the Azure NetApp Files (ANF) provides the performance required to run EDA workloads on the cloud at scale. ANF is widely used as the underlying shared file-storage service in various scenarios. These include migration (lift and shift) of POSIX-compliant Linux and Windows applications, SAP HANA, databases, high-performance compute (HPC) infrastructure and apps, and enterprise web applications. 
 
 Make sure ANF is provisioned in the same the resource group, region and VNet. We need a dedicated subnet before provisioning ANF. 
 
@@ -109,7 +109,7 @@ https://learn.microsoft.com/en-us/azure/bastion/tutorial-create-host-portal
 
 
 #### Azure CycleCloud
-Provision a CycleCloud from Azure Marketplace. Choose the latest version.
+EDA workloads often rely on a job scheduler for manage the scale-out of engineering workloads. Job schedulers, such as LSF, GridEngine, etc. are often used in EDA. CycleCloud uses the scheduler queues to understand when to provision and deprovision VMs to process the jobs in the queues with only the resources required. Provision a CycleCloud from Azure Marketplace. Choose the latest version.
 You can create a VM without a public IP so that this VM is not exposed to public internet. Alternatively you can peer this VNet to an existing VNet that's connected to your VPN or Express Route. This allows you to access this VM from your on-premise network.
 
 After the VM is successfully provisioned, access the VM on it's private IP.
