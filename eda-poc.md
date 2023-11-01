@@ -42,7 +42,8 @@ https://learn.microsoft.com/en-us/cli/azure/sig?view=azure-cli-latest#az-sig-cre
     az sig create -g $RESOURCE_GROUP --gallery-name MyGallery -l $REGION
 
     # Create Image Definition
-    az sig image-definition create -g $RESOURCE_GROUP --gallery-name MyGallery --gallery-image-definition centosimagedef --publisher KA --offer KA --sku KA --hyper-v-generation V2 --os-type linux --os-state Generalized
+    az sig image-definition create -g $RESOURCE_GROUP --gallery-name MyGallery --gallery-image-definition centosimagedef \
+    --publisher KA --offer KA --sku KA --hyper-v-generation V2 --os-type linux --os-state Generalized
 
     # Create Image Version
     az sig image-version create -g $RESOURCE_GROUP --gallery-name MyGallery --gallery-image-definition centosimagedef --gallery-image-version 1.0.0 --managed-image {resource-id of your generalized image} --target-regions $REGION=1=standard_lrs --target-region-encryption MyDiskEncryptionSet --no-wait
